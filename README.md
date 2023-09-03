@@ -1,2 +1,2 @@
 # PySonataWebAPI
-Unofficial Symfonia WebAPI asynchronous python3 client
+Unofficial Symfonia WebAPI asynchronous client for python3.10+

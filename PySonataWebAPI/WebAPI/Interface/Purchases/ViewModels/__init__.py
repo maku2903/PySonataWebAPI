@@ -1,0 +1,328 @@
+from ...Common.ViewModels import (
+    PaymentRegistryBase,
+    VatRateBase,
+)
+from ...Enums import (
+    enumCancelationType,
+    enumDocumentStatus,
+    enumFiscalizationStatus,
+    enumJPK_V7DocumentAttribute,
+    enumManualSettledState,
+    enumPriceKind,
+    enumRDFStatus,
+)
+
+from datetime import (
+    datetime,
+)
+from decimal import (
+    Decimal,
+)
+from enum import (
+    Enum,
+    auto,
+)
+from pydantic import (
+    BaseModel,
+)
+from typing import (
+    List,
+    Optional,
+)
+class PurchaseCorrectionPositionElement(BaseModel):
+    ProductId: Optional[int]
+    SetHeaderId: Optional[int]
+    Description: str
+    NetValuePLN: Decimal
+    GrossValue: Decimal
+    PriceValue: Decimal
+    WrittenUnitOfMeasurement: str
+    VatRate: "VatRateBase"
+    VatValuePLN: Decimal
+    Quantity: Decimal
+    NetValue: Decimal
+    PriceValuePLN: Decimal
+    Id: int
+    WrittenQuantity: Decimal
+    Duty: Decimal
+    Excise: Decimal
+    ProductCode: str
+    PriceKind: "enumPriceKind"
+    UnitOfMeasurement: str
+class PurchaseDocumentZMW(BaseModel):
+    DocumentNumber: str
+    DelivererId: int
+    Id: int
+    SellerId: int
+    IssueDate: Optional[datetime]
+    ReceiveDate: Optional[datetime]
+class PurchaseDocumentListElement(BaseModel):
+    VatValuePLN: Decimal
+    ForeignDocumentDate: Optional[datetime]
+    NumberInSeries: int
+    DocumentNumber: str
+    Description: str
+    SellerId: Optional[int]
+    Id: int
+    IssuerId: int
+    Settled: bool
+    GrossValue: Decimal
+    DelivererId: Optional[int]
+    Active: bool
+    ReceiveDate: Optional[datetime]
+    TypeCode: str
+    Series: str
+    Canceled: "enumCancelationType"
+    MaturityDate: Optional[datetime]
+    Buffer: bool
+    NetValue: Decimal
+    NetValuePLN: Decimal
+    PurchaseDate: Optional[datetime]
+    IssueDate: Optional[datetime]
+    DepartmentId: int
+    Currency: str
+class PurchaseCorrectionIssuePositionElement(BaseModel):
+    Quantity: Decimal
+    Name: str
+    Duty: Decimal
+    Code: str
+    Value: Decimal
+    PriceValue: Decimal
+    Excise: Decimal
+    UnitOfMeasurement: str
+class PurchaseDocumentIssueContractorData(BaseModel):
+    Name: str
+    HouseNo: str
+    City: str
+    NIP: str
+    Country: str
+    Street: str
+    PostCode: str
+    ApartmentNo: str
+class PurchaseCorrectionIssueContractor(BaseModel):
+    DeliveryAddressCode: str
+    RecalculatePrices: bool
+    Data: "PurchaseDocumentIssueContractorData"
+class PurchaseDocumentPZ(BaseModel):
+    DelivererId: int
+    IssueDate: Optional[datetime]
+    OperationDate: Optional[datetime]
+    Id: int
+    DocumentNumber: str
+class PurchaseCorrectionPosition(BaseModel):
+    BeforeCorrection: "PurchaseCorrectionPositionElement"
+    No: int
+    AfterCorrection: "PurchaseCorrectionPositionElement"
+class PurchaseCorrection(BaseModel):
+    CorrectionReason: str
+    Fisacal: "enumFiscalizationStatus"
+    DelivererId: Optional[int]
+    Buffer: bool
+    PriceKind: "enumPriceKind"
+    Canceled: "enumCancelationType"
+    DepartmentId: int
+    PaymentRegistryId: int
+    GrossValue: Decimal
+    ReceivedBy: str
+    VatValuePLN: Decimal
+    ForeignDocumentDate: Optional[datetime]
+    Id: int
+    Active: bool
+    NumberInSeries: int
+    MasterDocumentOid: Optional[int]
+    SellerId: Optional[int]
+    CurrencyRate: Decimal
+    CurrencyRateCIT: Decimal
+    IssuerId: int
+    IssueDate: Optional[datetime]
+    ForeignDocumentNumber: str
+    DelivererAddressId: Optional[int]
+    Note: str
+    ReceiveDate: Optional[datetime]
+    SellerAddressId: Optional[int]
+    Currency: str
+    Settled: bool
+    Positions: List["PurchaseCorrectionPosition"]
+    VoluntarySplitPayment: bool
+    TypeCode: str
+    PaymentFormId: int
+    NetValue: Decimal
+    PurchaseDate: Optional[datetime]
+    SplitPayment: bool
+    WhiteList: List[bool]
+    KindId: int
+    CatalogId: int
+    DocumentNumber: str
+    JPK_V7Attributes: "enumJPK_V7DocumentAttribute"
+    Marker: int
+    eInvoice: bool
+    MaturityDate: Optional[datetime]
+    NetValuePLN: Decimal
+    Series: str
+class PurchaseDocumentIssueKind(BaseModel):
+    Code: str
+    AddIfNotExist: bool
+class PurchaseDocumentIssueContractor(BaseModel):
+    Id: Optional[int]
+    Code: str
+    RecalculatePrices: bool
+    DeliveryAddressCode: str
+    Data: "PurchaseDocumentIssueContractorData"
+class PurchaseDocumentIssuePositionElement(BaseModel):
+    Excise: Decimal
+    Quantity: Decimal
+    Code: str
+    UnitOfMeasurement: str
+    PriceValue: Decimal
+    Duty: Decimal
+    Value: Decimal
+    Name: str
+class PurchaseDocumentIssueCatalog(BaseModel):
+    FullPath: str
+    AddIfNotExist: bool
+class PurchaseDocumentIssuePosition(PurchaseDocumentIssuePositionElement):
+    Elements: List["PurchaseDocumentIssuePositionElement"]
+    VatRate: "VatRateBase"
+class PurchaseDocumentIssue(BaseModel):
+    Marker: int
+    MaturityDate: Optional[datetime]
+    Department: str
+    PaymentRegistry: "PaymentRegistryBase"
+    Series: str
+    ForeignDocumentDate: Optional[datetime]
+    CurrencyRateCIT: Decimal
+    ForeignDocumentNumber: str
+    PaymentFormId: int
+    CurrencyRate: Decimal
+    IssueDate: Optional[datetime]
+    Currency: str
+    Kind: "PurchaseDocumentIssueKind"
+    Note: str
+    VoluntarySplitPayment: bool
+    WhiteList: List[bool]
+    Description: str
+    JPK_V7Attributes: Optional["enumJPK_V7DocumentAttribute"]
+    SplitPayment: bool
+    Seller: "PurchaseDocumentIssueContractor"
+    PurchaseDate: Optional[datetime]
+    TypeCode: str
+    Catalog: "PurchaseDocumentIssueCatalog"
+    Positions: List["PurchaseDocumentIssuePosition"]
+    NumberInSeries: Optional[int]
+    Deliverer: "PurchaseDocumentIssueContractor"
+    PriceKind: "enumPriceKind"
+    ReceiveDate: Optional[datetime]
+class PurchaseCorrectionIssuePosition(PurchaseCorrectionIssuePositionElement):
+    VatRate: "VatRateBase"
+    No: Optional[int]
+    Elements: List["PurchaseCorrectionIssuePositionElement"]
+class PurchaseCorrectionIssue(BaseModel):
+    NumberInSeries: Optional[int]
+    JPK_V7Attributes: Optional["enumJPK_V7DocumentAttribute"]
+    IssueDate: Optional[datetime]
+    Catalog: "PurchaseDocumentIssueCatalog"
+    MaturityDate: Optional[datetime]
+    PurchaseDate: Optional[datetime]
+    MasterDocumentNumber: str
+    TypeCode: str
+    CorrectionReason: str
+    Marker: int
+    ReceiveDate: Optional[datetime]
+    SplitPayment: bool
+    PaymentFormId: Optional[int]
+    ForeignDocumentDate: Optional[datetime]
+    VoluntarySplitPayment: bool
+    WhiteList: List[bool]
+    MasterDocumentId: Optional[int]
+    ForeignDocumentNumber: str
+    CurrencyRate: Optional[Decimal]
+    Note: str
+    Deliverer: "PurchaseCorrectionIssueContractor"
+    Positions: List["PurchaseCorrectionIssuePosition"]
+    Series: str
+    Seller: "PurchaseCorrectionIssueContractor"
+    PaymentRegistry: "PaymentRegistryBase"
+    Kind: "PurchaseDocumentIssueKind"
+class PurchaseDocumentCorrection(BaseModel):
+    ReceiveDate: Optional[datetime]
+    Id: int
+    DocumentNumber: str
+    ForeignDocumentDate: Optional[datetime]
+    No: int
+    IssueDate: Optional[datetime]
+class PurchaseDocumentStatus(BaseModel):
+    PaymentSettled: int
+    WarehouseSettled: int
+    ManualSettled: "enumManualSettledState"
+    RDFStatus: "enumRDFStatus"
+    Id: int
+    Buffer: bool
+    DocumentStatusText: str
+    DocumentStatus: "enumDocumentStatus"
+    DocumentNumber: str
+class PurchaseDocumentPosition(BaseModel):
+    NetValue: Decimal
+    Quantity: Decimal
+    Description: str
+    UnitOfMeasurement: str
+    PriceValue: Decimal
+    Excise: Decimal
+    ProductId: Optional[int]
+    Id: int
+    WrittenUnitOfMeasurement: str
+    WrittenQuantity: Decimal
+    No: int
+    GrossValue: Decimal
+    Duty: Decimal
+    VatRate: "VatRateBase"
+    SetHeaderId: Optional[int]
+    PriceKind: "enumPriceKind"
+    ProductCode: str
+    NetValuePLN: Decimal
+    PriceValuePLN: Decimal
+    VatValuePLN: Decimal
+class PurchaseDocument(BaseModel):
+    Fisacal: "enumFiscalizationStatus"
+    DelivererId: Optional[int]
+    NetValue: Decimal
+    ForeignDocumentDate: Optional[datetime]
+    TypeCode: str
+    Description: str
+    WhiteList: List[bool]
+    ReceivedBy: str
+    Marker: int
+    Buffer: bool
+    Positions: List["PurchaseDocumentPosition"]
+    PaymentRegistryId: int
+    KindId: int
+    SellerId: Optional[int]
+    IssueDate: Optional[datetime]
+    Canceled: "enumCancelationType"
+    SellerAddressId: Optional[int]
+    CurrencyRate: Decimal
+    PurchaseDate: Optional[datetime]
+    DepartmentId: int
+    ReceiveDate: Optional[datetime]
+    MaturityDate: Optional[datetime]
+    SplitPayment: bool
+    Currency: str
+    VatValuePLN: Decimal
+    Settled: bool
+    GrossValue: Decimal
+    PriceKind: "enumPriceKind"
+    DelivererAddressId: Optional[int]
+    eInvoice: bool
+    Id: int
+    Note: str
+    CurrencyRateCIT: Decimal
+    Series: str
+    ForeignDocumentNumber: str
+    NumberInSeries: int
+    NetValuePLN: Decimal
+    DocumentNumber: str
+    VoluntarySplitPayment: bool
+    JPK_V7Attributes: "enumJPK_V7DocumentAttribute"
+    IssuerId: int
+    PaymentFormId: int
+    Active: bool
+    CatalogId: int
