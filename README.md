@@ -113,5 +113,5 @@ to be explained...
 
 ### Third-Party Libraries
 
- - This project uses `Pydantic`, which is licensed under the MIT License. A copy of the license is included in this repository.
- - This project uses `aiohttp`, which is licensed under the Apache License 2.0. A copy of the license is included in this repository.
+ - This project uses `Pydantic`, which is licensed under the `MIT License`. A copy of the license is included in this repository.
+ - This project uses `aiohttp`, which is licensed under the `Apache License 2.0`. A copy of the license is included in this repository.
