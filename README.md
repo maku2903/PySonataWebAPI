@@ -47,7 +47,7 @@ But they must be known before that...
  - WebAPI.Interface.Products.ViewModels.ProductListElement property VatRate can be None
  - WebAPI.Interface.Common.ViewModels.Dimension property DictionaryValue can be None
  - WebAPI.Interface.Products.ViewModels.Product property SetElements can be None
- - WebAPI.Interface.Products.ViewModels property Barcode can be None
+ - WebAPI.Interface.Products.ViewModels.ProductBarcode property Barcode can be None
 
 ### Known models bugs (not patched)
 
