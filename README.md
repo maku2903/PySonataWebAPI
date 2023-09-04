@@ -39,11 +39,19 @@ But they must be known before that...
  - WebAPI.Interface.Products.ViewModels.ProductListElement property VatRate can be None
  - WebAPI.Interface.Common.ViewModels.Dimension property DictionaryValue can be None
  - WebAPI.Interface.Products.ViewModels.Product property SetElements can be None
- - Sage.PL.WebAPI.Interface.Products.ViewModels property Barcode can be None
+ - WebAPI.Interface.Products.ViewModels property Barcode can be None
 
 ### Known models bugs (not patched)
 
  to be written
+
+### Patched methods
+
+none
+
+### Know method bugs (not patched)
+
+to be written
 
 ## Example usage (simple exaple)
 
@@ -99,7 +107,7 @@ to be explained...
 
 ## TODOs
 
- - support SLL certs
+ - support SSL certs
  - support for selective method return type based on input parameter value
  - code autobuild and auto-versioning for past, current and upcoming WebAPI server versions
 
