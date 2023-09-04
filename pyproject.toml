@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "PySonataWebAPI"
-version = "1.0.0"
+version = "1.0.1"
 description = "Unofficial Symfonia WebAPI asynchronous client for python"
 authors = ["Maciej Pondo <maciejpondo@gmail.com>"]
 license = "Apache-2.0 license"
 readme = "README.md"
+homepage = 'https://github.com/maku2903/PySonataWebAPI'
+repository = 'https://github.com/maku2903/PySonataWebAPI'
 packages = [{include = "PySonataWebAPI"}]
 
 [tool.poetry.dependencies]
@@ -19,7 +21,3 @@ aiohttp = "^3.8.5"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
-homepage = 'https://github.com/maku2903/PySonataWebAPI'
-repository = 'https://github.com/maku2903/PySonataWebAPI'
