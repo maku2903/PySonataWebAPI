@@ -6,7 +6,8 @@ Client is object oriented with model validation.
 
 ## Why?
 
-Proof of concept, trying to utilise my current knowledge.
+Proof of concept, lack of such client and attempt to utilise my current knowledge and experience of working with `Symfonia WebAPI` server.
+Incoming python integration to MS Excel is also an answer.
 
 ## Installation
 
@@ -119,6 +120,12 @@ to be explained...
  - support SSL certs
  - support for selective method return type based on input parameter value
  - code autobuild and auto-versioning for past, current and upcoming WebAPI server versions
+
+## Licence
+
+### Project Licence
+
+ - This project is licensed under the `Apache License 2.0` licence. A copy of the license is included in this repository.
 
 ### Third-Party Libraries
 
