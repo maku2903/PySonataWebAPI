@@ -43,6 +43,8 @@ But they must be known before that...
 
 ## Server bugs
 
+I have caught many errors using WebAPI server. I tried to fix some of them with patching mechanism I have designed.
+
 ### Patched models
 
  - WebAPI.Interface.Products.ViewModels.ProductListElement property VatRate can be None
