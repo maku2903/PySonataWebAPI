@@ -115,6 +115,7 @@ to be explained...
 
 ## TODOs
 
+ - support not settable model properties 
  - support SSL certs
  - support for selective method return type based on input parameter value
  - code autobuild and auto-versioning for past, current and upcoming WebAPI server versions
