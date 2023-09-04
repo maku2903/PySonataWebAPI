@@ -1,3 +1,6 @@
+![PyPI - Version](https://img.shields.io/pypi/v/PySonataWebAPI)
+![GitHub](https://img.shields.io/github/license/maku2903/PySonataWebAPI)
+
 # PySonataWebAPI
 
 Unofficial Symfonia WebAPI asynchronous client for python3.10+
