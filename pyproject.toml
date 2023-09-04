@@ -20,5 +20,6 @@ aiohttp = "^3.8.5"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[project.urls]
-Homepage = 'https://github.com/maku2903/PySonataWebAPI'
+[tool.poetry]
+homepage = 'https://github.com/maku2903/PySonataWebAPI'
+repository = 'https://github.com/maku2903/PySonataWebAPI'
