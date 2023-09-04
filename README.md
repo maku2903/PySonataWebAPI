@@ -8,6 +8,9 @@ Client is object oriented with model validation.
 
 Proof of concept, lack of such client and attempt to utilise my current knowledge and experience of working with `Symfonia WebAPI` server.
 Incoming python integration to MS Excel is also an answer.
+Alse, the project has grown so much that I had to start versioning it.
+
+Please keep in mind that this project is still in `work in progress` stage.
 
 ## Installation
 
