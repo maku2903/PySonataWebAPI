@@ -34,6 +34,8 @@ Script has ability to patch known issues on model and method sides.
 
 But they must be known before that...
 
+## Server bugs
+
 ### Patched models
 
  - WebAPI.Interface.Products.ViewModels.ProductListElement property VatRate can be None
