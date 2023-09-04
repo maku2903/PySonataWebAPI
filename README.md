@@ -2,6 +2,12 @@
 
 Unofficial Symfonia WebAPI asynchronous client for python3.10+
 
+Client is object oriented with model validation.
+
+## Why?
+
+Proof of concept, trying to utilise my current knowledge.
+
 ## Installation
 
 Install using `pip install -U PySonataWebAPI`
