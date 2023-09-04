@@ -21,7 +21,7 @@ Install using `pip install -U PySonataWebAPI`
 This client hugely depends on typehints in official documentation of WebAPI server.
 It tries to reflect models and methods from documentation for easier method use 
 and easier to perform data manipulation but
-there are some limitations due to documentation inaccurancies and C# / Python environment differences.
+there are some limitations due to documentation inaccuracies and C# / Python environment differences.
 Known documentation inaccuracies are fixed on this client side.
 Especially this refers to undocumented enum values (f.e. for reservation types) and
 for nullable property of models fields.
