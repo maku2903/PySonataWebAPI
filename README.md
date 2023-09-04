@@ -49,7 +49,7 @@ But they must be known before that...
 
 none
 
-### Know method bugs (not patched)
+### Known method bugs (not patched)
 
 to be written
 
