@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "PySonataWebAPI"
 version = "1.0.1"
-description = "Unofficial Symfonia WebAPI asynchronous client for python"
+description = "Legacy package: migrate to SymfWebAPI (https://github.com/maku2903/symf-webapi-py)"
 authors = ["Maciej Pondo <maciejpondo@gmail.com>"]
 license = "Apache-2.0 license"
 readme = "README.md"
